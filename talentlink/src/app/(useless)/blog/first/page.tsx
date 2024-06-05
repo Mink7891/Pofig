@@ -5,9 +5,10 @@ export default function First() {
   return (
     <>
       <h1>first Blog page</h1>
-      <Button>
-        <Link href="/blog">Обратно</Link>
-      </Button>
+
+      <Link href="/blog">
+        <Button>Обратно</Button>
+      </Link>
     </>
   );
 }

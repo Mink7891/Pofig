@@ -5,9 +5,10 @@ export default function About() {
   return (
     <>
       <h1>about page</h1>
-      <Button>
-        <Link href="/">Обратно</Link>
-      </Button>
+
+      <Link href="/">
+        <Button>Обратно</Button>
+      </Link>
     </>
   );
 }

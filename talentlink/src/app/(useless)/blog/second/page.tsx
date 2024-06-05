@@ -5,9 +5,10 @@ export default function Second() {
   return (
     <>
       <h1>second Blog page</h1>
-      <Button>
-        <Link href="/blog">Обратно</Link>
-      </Button>
+
+      <Link href="/blog">
+        <Button>Обратно</Button>
+      </Link>
     </>
   );
 }

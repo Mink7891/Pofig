@@ -7,15 +7,19 @@ export default function Home() {
   return (
     <main className="">
       <h1>Здарова пацаны</h1>
-      <Button>
-        <Link href="/about">О нас</Link>
-      </Button>
-      <Button>
-        <Link href="/blog">Блог</Link>
-      </Button>
-      <Button>
-        <Link href="/products">Товары</Link>
-      </Button>
+
+      <Link href="/about">
+        <Button>О нас </Button>
+      </Link>
+
+      {/* <a href="/blog">Блог</a> */}
+      <Link href="/blog">
+        <Button>Блог</Button>
+      </Link>
+
+      <Link href="/products">
+        <Button>Товары </Button>
+      </Link>
     </main>
   );
 }
