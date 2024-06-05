@@ -1,6 +1,6 @@
 # Че как запускаем
 
-- cd telentlink
+- cd talentlink
 - npm i
 - npm run dev
 
