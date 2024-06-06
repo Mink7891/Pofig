@@ -20,6 +20,9 @@ export default function Home() {
       <Link href="/products">
         <Button>Товары </Button>
       </Link>
+      <Link href="/parallel">
+        <Button>параллель </Button>
+      </Link>
     </main>
   );
 }

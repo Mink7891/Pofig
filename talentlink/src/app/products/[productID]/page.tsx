@@ -24,6 +24,7 @@ export default function ProductDetails({ params }: Params) {
       <h1>Продукт № {params.productID}</h1>
 
       <Link href="/">
+        {/* <Link href="/" replace> удаляеи из исотии посещенных эту страницу*/}
         <Button>назад </Button>
       </Link>
     </main>
