@@ -8,5 +8,5 @@
 
 - npm i
 - npm run dev
-**np rfc**
+- **np rfc**(сниппеты)
 
