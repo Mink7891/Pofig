@@ -1,0 +1,10 @@
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
+from sqlachemy.ext.declarative import declarative_base
+
+DATABASE_URL = "postgresql+asyncpg://postgres:postgres@localhost:5432/python_db"
+
+engine = create_async_engine(DATABASE_URL)
+SessionLocal = async_sessionmaker(expire_on_commit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
+
