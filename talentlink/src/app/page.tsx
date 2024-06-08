@@ -23,6 +23,9 @@ export default function Home() {
       <Link href="/parallel">
         <Button>параллель </Button>
       </Link>
+      <Link href="/news">
+        <Button>Новости </Button>
+      </Link>
     </main>
   );
 }
