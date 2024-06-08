@@ -18,6 +18,6 @@ export async function addNew(e: FormData){
     });
 
     const news = await prisma.news.findMany();
-    console.log(news);
+    // console.log(news);
     revalidatePath('/news');
 }
