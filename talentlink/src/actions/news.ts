@@ -28,21 +28,20 @@ export async function addNew(formData: Inputs){
     // console.log(news);
     revalidatePath('/news');
 }
-// export async function addNew(e: FormData){
-//     const Header = e.get("Header")?.toString();
-//     const Category = e.get("Category")?.toString();
-//     const Text = e.get("Text")?.toString();
+export async function deleteNew(id){
 
-//     console.log(`adding Header-${Header} category-${Category} text-${Text}--------------------`);
-//     await prisma.news.create({
-//         data: {
-//         Header,
-//         Category,
-//         Text,
-//         },
-//     });
+    const deletedItem = await prisma.news.delete({
+        where: { NewID: Number(id) },
+      });
 
-//     const news = await prisma.news.findMany();
-//     // console.log(news);
-//     revalidatePath('/news');
-// }
+    // console.log(deletedItem)
+    revalidatePath('/news');
+}
+export async function updateItem(data, id){
+    const updatedItem = await prisma.news.update({
+    where: { NewID: Number(id) },
+    data: { Header: data,  },
+  });
+//   console.log(updatedItem)
+}
+
