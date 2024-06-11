@@ -5,32 +5,32 @@ import { ModeToggle } from "../clickable/toggleMode";
 export default function Header() {
   return (
     <header>
-      <nav className="grid grid-cols-[100px_100px_100px_100px_1fr_1fr] ml-5">
+      <nav className="grid grid-cols-[auto_auto_auto_auto_1fr_1fr] ml-5">
         <Link
           href="/"
-          className="text-sm font-medium transition-colors hover:text-primary  my-3 self-center"
+          className="text-sm font-medium transition-colors hover:text-primary my-3 mr-10 self-center"
         >
           Гланвая
         </Link>
         <Link
           href="/"
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 self-center"
+          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10 self-center"
         >
           Вакансии
         </Link>
         <Link
           href="/"
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 self-center"
+          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10 self-center"
         >
           Резюме
         </Link>
         <Link
           href="/news"
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 self-center"
+          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10 self-center"
         >
           Новости
         </Link>
-        <div className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3">
+        <div className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10">
           <ModeToggle />
         </div>
 
