@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import Header from "@/components/layout/header";
 import { ThemeProvider } from "../components/theme/theme-provider";
+import { Separator } from "@/components/ui/separator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -31,6 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
+          <Separator />
           {/* <main className={inter.className}>{children}</main> */}
           <main>{children}</main>
         </ThemeProvider>

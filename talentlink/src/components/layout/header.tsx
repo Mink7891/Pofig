@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { ModeToggle } from "../clickable/toggleMode";
 
 export default function Header() {
   return (
     <header>
-      <nav className="grid grid-cols-[100px_100px_100px_100px_1fr] ml-5">
+      <nav className="grid grid-cols-[100px_100px_100px_100px_1fr_1fr] ml-5">
         <Link
           href="/"
           className="text-sm font-medium transition-colors hover:text-primary  my-3 self-center"
@@ -29,6 +30,10 @@ export default function Header() {
         >
           Новости
         </Link>
+        <div className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3">
+          <ModeToggle />
+        </div>
+
         <Link
           href="/"
           className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 self-center justify-self-end mr-5"
