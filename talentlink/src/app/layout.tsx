@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import Header from "@/components/layout/header";
@@ -7,6 +7,12 @@ import { ThemeProvider } from "../components/theme/theme-provider";
 import { Separator } from "@/components/ui/separator";
 
 const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Arial", "sans-serif"],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
