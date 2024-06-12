@@ -1,5 +1,6 @@
 // global.d.ts
 // The `JWT` interface can be found in the `next-auth/jwt` submodule
+import React from "react";
 
 declare module "react" {
     interface ImgHTMLAttributes<T> {
