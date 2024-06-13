@@ -3,7 +3,7 @@ import prisma from "./prisma";
 export default async function handler() {
 
     const FirstName = "Ars";
-    const LastName = "Yu";
+    const LastName = "Yu";+
     const BirthDate = new Date();
     const Position = "position";
     const Salary = "12";

@@ -13,7 +13,7 @@ export default function Header() {
           Гланвая
         </Link>
         <Link
-          href="/"
+          href="/vacancies"
           className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10 self-center"
         >
           Вакансии
