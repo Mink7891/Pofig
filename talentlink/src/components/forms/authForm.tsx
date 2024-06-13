@@ -12,10 +12,10 @@ export default function AuthForm() {
 
     return (
         <div className="flex justify-center items-center flex-col">
-            <form action={dispatch} className="flex flex-col gap-3 p-5 rounded bg-slate-700 min-w-96">
+            <form action={dispatch} className="flex flex-col gap-3 p-5 rounded bg-slate-700 w-96">
                 <h1>Авторизация</h1>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">Электронная почта:</label>
 
                     <input
                         type="text"
@@ -25,7 +25,7 @@ export default function AuthForm() {
                     />
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="password">Пароль:</label>
                     <input
                         type="password"
                         id="password"

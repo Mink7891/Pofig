@@ -19,19 +19,21 @@ export const RegisterForm = () => {
 
     return (
         <div className="flex justify-center items-center flex-col">
-            <form action={dispatch} className="flex flex-col gap-3 p-5 rounded bg-slate-700 min-w-96">
-                <h1>Регистрация</h1>
+            <form action={dispatch} className="flex flex-col gap-3 p-5 rounded bg-slate-700 w-96">
+                <h1 className="font-bold text-lg">Регистрация</h1>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="username">Username:</label>
+                    <label htmlFor="username">Имя пользователя:</label>
                     <input
                         type="text"
                         id="username"
                         name="username"
                         className="p-1 rounded"
                     />
+                    {errorMessage.errors?.username &&
+                        <span className="mt-2 text-sm text-red-500">{errorMessage.errors.username}</span>}
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">Электронная почта:</label>
 
                     <input
                         type="text"
@@ -39,15 +41,21 @@ export const RegisterForm = () => {
                         name="email"
                         className="p-1 rounded"
                     />
+
+                    {errorMessage.errors?.email &&
+                        <span className="mt-2 text-sm text-red-500">{errorMessage.errors.email}</span>}
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="password">Пароль:</label>
                     <input
                         type="password"
                         id="password"
                         name="password"
                         className="p-1 rounded"
                     />
+
+                    {errorMessage.errors?.password &&
+                        <span className="mt-2 text-sm text-red-500">{errorMessage.errors.password}</span>}
                 </div>
                 <Button>
                     Зарегистрироваться
