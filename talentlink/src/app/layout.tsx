@@ -38,7 +38,7 @@ export default function RootLayout({
         >
             <Header />
             <Separator />
-            <main className="w-screen h-screen">{children}</main>
+            <main>{children}</main>
         </ThemeProvider>
         </body>
         </html>

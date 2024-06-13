@@ -4,47 +4,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { ModeToggle } from "../clickable/toggleMode";
 import { HeaderNav } from "@/components/ui/HeaderNav";
 
-<<<<<<< HEAD
-export default function Header() {
-  return (
-    <header>
-      <nav className="grid grid-cols-[auto_auto_auto_auto_1fr_1fr] ml-5">
-        <Link
-          href="/"
-          className="text-sm font-medium transition-colors hover:text-primary my-3 mr-10 self-center"
-        >
-          Гланвая
-        </Link>
-        <Link
-          href="/vacancies"
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10 self-center"
-        >
-          Вакансии
-        </Link>
-        <Link
-          href="/"
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10 self-center"
-        >
-          Резюме
-        </Link>
-        <Link
-          href="/news"
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10 self-center"
-        >
-          Новости
-        </Link>
-        <div className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary my-3 mr-10">
-          <ModeToggle />
-        </div>
-=======
->>>>>>> fcd5208c49755e919b4a81772b573aed74b9ae32
 
 export default async function Header() {
     const session = await auth();
 
     return (
         <header>
-            <nav className="grid grid-cols-[auto_auto_auto_auto_1fr_1fr] ml-5">
+            <nav className="grid grid-cols-[auto_auto_1fr] ml-5">
 
                 <HeaderNav isAuthenticated={Boolean(session)} />
 
