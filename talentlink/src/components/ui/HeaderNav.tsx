@@ -23,7 +23,7 @@ export const HeaderNav = (props: HeaderNavProps) => {
                 content: "Главная",
             },
             {
-                href: "/vakansii",
+                href: "/vacancies",
                 content: "Вакансии",
             },
             {
