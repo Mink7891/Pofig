@@ -42,71 +42,63 @@ export default function VacancyDetailPage() {
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">{vacancyDetail.job_title}</h1>
       <Card>
-        <CardHeader>
-          <CardTitle>Задачи</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul>
-            {vacancyDetail.tasks.map((task, index) => (
-              <li key={index}>{task}</li>
-            ))}
-          </ul>
-        </CardContent>
+      {vacancyDetail.tasks && vacancyDetail.tasks.length > 0 && (
+        <>
+          <CardHeader>
+            <CardTitle>Задачи</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul>
+              {vacancyDetail.tasks.map((task, index) => (
+                <li key={index}>{task}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </>
+      )}
+      {vacancyDetail.preferred_skills && vacancyDetail.preferred_skills.length > 0 && (
+        <>
+          <CardHeader>
+            <CardTitle>Будет плюсом</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul>
+              {vacancyDetail.preferred_skills.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </>
+      )}
 
-        <CardHeader>
-          <CardTitle>Требуемые навыки и знания</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul>
-            {vacancyDetail.required_skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
-        </CardContent>
-
-        <CardHeader>
-          <CardTitle>Будет плюсом</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul>
-            {vacancyDetail.preferred_skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
-        </CardContent>
-      
-        {/* <CardHeader>
-          <CardTitle>Мы предлагаем</CardTitle>
-        </CardHeader>
-        <CardContent>
-          {vacancyDetail.we_offer.map((offer, index) => (
-            <div key={index}>
-              <h2>{offer.name}</h2>
-              <p>{offer.description}</p>
+      {vacancyDetail.we_offer && vacancyDetail.we_offer.length > 0 && (
+        <>
+          <CardHeader>
+            <CardTitle>Мы предлагаем</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {vacancyDetail.we_offer.map((offer, index) => (
+                <div key={index} className=" p-4 rounded shadow-md">
+                  <h2 className="text-xl font-bold mb-2">{offer.name}</h2>
+                  <p>{offer.description}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </CardContent> */}
+          </CardContent>
+        </>
+      )}
 
-        <CardHeader>
-          <CardTitle>Мы предлагаем</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {vacancyDetail.we_offer.map((offer, index) => (
-              <div key={index} className=" p-4 rounded shadow-md">
-                <h2 className="text-xl font-bold mb-2">{offer.name}</h2>
-                <p>{offer.description}</p>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-
-        <CardHeader>
-          <CardTitle>Контакты</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>{vacancyDetail.contact_info}</p>
-        </CardContent>
+      {vacancyDetail.contact_info && (
+        <>
+          <CardHeader>
+            <CardTitle>Контакты</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>{vacancyDetail.contact_info}</p>
+          </CardContent>
+        </>
+      )}
       </Card>
     </div>
   );
