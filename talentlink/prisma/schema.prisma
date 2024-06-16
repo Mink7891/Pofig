@@ -1,10 +1,10 @@
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
 }
 
 model Employee {
@@ -72,4 +72,76 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verificationtokens")
+}
+
+model Resume {
+  id               Int                @id @default(autoincrement())
+  first_name       String
+  last_name        String
+  position         String
+  specialization   String?
+  skills           ResumeSkills[]
+  workExperience   ResumeWorkExperience[]
+  education        ResumeEducation[]
+}
+
+model Skills {
+  id         Int               @id @default(autoincrement())
+  skill_name String
+  resumes    ResumeSkills[]
+}
+
+model WorkExperience {
+  id              Int                  @id @default(autoincrement())
+  work_period     DateTime?
+  position        String?
+  company         String?
+  clients         String?
+  project         String?
+  team_members    String?
+  project_role    String?
+  completed_tasks String?
+  environment     String?
+  tools           String?
+  technologies    String?
+  resumes         ResumeWorkExperience[]
+}
+
+model Education {
+  id               Int               @id @default(autoincrement())
+  education_type   String?
+  specialization   String?
+  education_period DateTime?
+  institution      String?
+  resumes          ResumeEducation[]
+}
+
+model ResumeSkills {
+  id        Int     @id @default(autoincrement())
+  resume_id Int
+  skill_id  Int
+  resume    Resume  @relation(fields: [resume_id], references: [id])
+  skill     Skills  @relation(fields: [skill_id], references: [id])
+
+  @@unique([resume_id, skill_id])
+}
+
+model ResumeWorkExperience {
+  id                Int            @id @default(autoincrement())
+  resume_id         Int
+  work_experience_id Int
+  resume            Resume         @relation(fields: [resume_id], references: [id])
+  work_experience   WorkExperience @relation(fields: [work_experience_id], references: [id])
+
+  @@unique([resume_id, work_experience_id])
+}
+
+model ResumeEducation {
+  id           Int        @id @default(autoincrement())
+  resume_id    Int
+  education_id Int
+  resume       Resume     @relation(fields: [resume_id], references: [id])
+  education    Education  @relation(fields: [education_id], references: [id])
+
+  @@unique([resume_id, education_id])
 }
