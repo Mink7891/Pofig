@@ -30,10 +30,7 @@ export const HeaderNav = (props: HeaderNavProps) => {
                 href: "/resume",
                 content: "Резюме",
             },
-            {
-                href: "/news",
-                content: "Новости",
-            },
+
             {
                 href: isAuthenticated ? "/profile" : "/auth",
                 content: isAuthenticated ? "Профиль" : "Войти",
