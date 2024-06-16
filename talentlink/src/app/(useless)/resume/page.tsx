@@ -37,7 +37,6 @@ const Resume = () => {
           <Paper key={resume.id} style={{ padding: 16, margin: 16 }}>
             <Typography variant="h5">{resume.position}</Typography>
             <List>
-              {/* Render resume details */}
               <ListItem>
                 <ListItemText primary="Position" secondary={resume.position} />
                 <ListItemSecondaryAction>
@@ -49,6 +48,21 @@ const Resume = () => {
                   </IconButton>
                 </ListItemSecondaryAction>
               </ListItem>
+              {resume.educations && (
+                <ListItem>
+                  <ListItemText primary="Education" secondary={resume.educations.map(edu => edu.institution).join(', ')} />
+                </ListItem>
+              )}
+              {resume.skills && (
+                <ListItem>
+                  <ListItemText primary="Skills" secondary={resume.skills.map(skill => skill.skill_name).join(', ')} />
+                </ListItem>
+              )}
+              {resume.workExperiences && (
+                <ListItem>
+                  <ListItemText primary="Work Experience" secondary={resume.workExperiences.map(we => we.company).join(', ')} />
+                </ListItem>
+              )}
             </List>
             <Button variant="contained" onClick={() => generatePDF(resume)}>Download PDF</Button>
           </Paper>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button, TextField, Typography, Paper, Slider, Checkbox, FormControlLabel, Autocomplete } from "@mui/material";
+import { Button, TextField, Typography, Paper, Slider, Autocomplete } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
@@ -30,7 +30,7 @@ const CreateResume = () => {
     // Fetch skills from the API
     const fetchSkills = async () => {
       try {
-       const response = await axios.get('/api/skills');
+        const response = await axios.get('/api/skills');
         setSkills(response.data);
       } catch (error) {
         console.error('Error fetching skills:', error);
@@ -41,7 +41,9 @@ const CreateResume = () => {
   }, []);
 
   const handleSkillChange = (event, newSkill) => {
-    setSelectedSkills(newSkill ? [newSkill, ...selectedSkills] : selectedSkills);
+    if (newSkill && !selectedSkills.includes(newSkill)) {
+      setSelectedSkills(newSkill ? [newSkill, ...selectedSkills] : selectedSkills);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -72,11 +74,12 @@ const CreateResume = () => {
   };
 
   const handleSkillInputChange = (index, value) => {
-    const updatedSkills = [...selectedSkills];
-    updatedSkills[index] = value;
-    setSelectedSkills(updatedSkills);
+    if (!selectedSkills.some(skill => skill.skill_name === value.skill_name)) {
+      const updatedSkills = [...selectedSkills];
+      updatedSkills[index] = value;
+      setSelectedSkills(updatedSkills);
+    }
   };
-
 
   const addWorkExperience = () => {
     setWorkExperiences([
