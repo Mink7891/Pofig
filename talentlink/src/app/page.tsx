@@ -3,6 +3,9 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import bg from '../../public/drugs.png'
 import Image from "next/image";
+import { EyeNoneIcon, PersonIcon, MagnifyingGlassIcon, CalendarIcon, Share1Icon } from "@radix-ui/react-icons";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, } from "@/components/ui/card";
+import { BellIcon } from "lucide-react";
 
 
 //ednf - expoer default named function
@@ -22,37 +25,88 @@ export default function Home() {
         
       </div>
       <Separator />
-      <div className="my-5 justify-self-center">
-        наши "многочисленные" преимущества, то что нас может выделить среди
-        других, то что должно поразить эксперта(card component)
+      <div className="my-5 justify-self-center grid grid-cols-2">
+      <Card className="m-5">
+        <CardHeader className="pb-3">
+          <CardTitle>Вакансии</CardTitle>
+          <CardDescription>
+            Публикуй и просматривай вакансии
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-1">
+          <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+            <BellIcon className="mt-px h-5 w-5" />
+            <div className="space-y-1">
+              <p className="text-sm font-medium leading-none">Уведомления</p>
+              <p className="text-sm text-muted-foreground">
+                Уведомления о новых вакансиях и об успешном создании новых
+              </p>
+            </div>
+          </div>
+          <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+            <PersonIcon className="mt-px h-5 w-5" />
+            <div className="space-y-1">
+              <p className="text-sm font-medium leading-none">Персонализация</p>
+              <p className="text-sm text-muted-foreground">
+                Индивидеальные вакансии
+              </p>
+            </div>
+          </div>
+          <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+            <MagnifyingGlassIcon className="mt-px h-5 w-5"/>
+            <div className="space-y-1">
+              <p className="text-sm font-medium leading-none">Фильтрация</p>
+              <p className="text-sm text-muted-foreground">
+                Фисльтрация и интерактивный поиск
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="m-5">
+        <CardHeader className="pb-3">
+          <CardTitle>Резюме</CardTitle>
+          <CardDescription>
+            Публикуй и просматривай резюме
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-1">
+          <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+            <BellIcon className="mt-px h-5 w-5" />
+            <div className="space-y-1">
+              <p className="text-sm font-medium leading-none">Уведомления</p>
+              <p className="text-sm text-muted-foreground">
+                Уведомления о новых вакансиях и об успешном создании новых
+              </p>
+            </div>
+          </div>
+          <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+            <CalendarIcon className="mt-px h-5 w-5" />
+            <div className="space-y-1">
+              <p className="text-sm font-medium leading-none">Календарь</p>
+              <p className="text-sm text-muted-foreground">
+                Настройка индивидуального календаря
+              </p>
+            </div>
+          </div>
+          <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
+            <Share1Icon className="mt-px h-5 w-5" />
+            <div className="space-y-1">
+              <p className="text-sm font-medium leading-none">Публикация</p>
+              <p className="text-sm text-muted-foreground">
+                Можно оставить резюме рекрутеру 
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       </div>
       <Separator />
-      <div className="my-10 justify-self-center">
-        далее стоит предложить за кого мы хотим играть, за рекрутера или
-        соискателя, тут также предлагаем зарегистрироваться
-      </div>
-      <Separator />
 
-      <h1>Здарова пацаны</h1>
-
-      <Link href="/about">
-        <Button>тестовая страница с zod валидацией, призмой</Button>
-      </Link>
-
+  
       {/* <a href="/blog">Блог</a> */}
-      <Link href="/blog">
-        <Button>просто вложенные маршруты</Button>
-      </Link>
-
-      <Link href="/products">
-        <Button>динамические маршруты </Button>
-      </Link>
-      <Link href="/parallel">
-        <Button>параллельный роутинг</Button>
-      </Link>
-      <Link href="/news">
-        <Button>тут есть серверные action</Button>
-      </Link>
+      
     </div>
   );
 }
