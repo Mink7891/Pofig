@@ -5,5 +5,6 @@
 - npm install
 - npm run dev
 
+Резюме можно добавить по ссылке /resume/create
 
 
