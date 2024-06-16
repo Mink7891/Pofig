@@ -61,9 +61,9 @@ export default function VacanciesPage() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Вакансии</h1>
-      <Button onClick={() => setShowDialog(true)} className="mb-4 font-bold py-2 px-4 rounded">
+      {/* <Button onClick={() => setShowDialog(true)} className="mb-4 font-bold py-2 px-4 rounded">
         Добавить вакансию
-      </Button>
+      </Button> */}
       <div className="mb-4">
         {categories.map((category) => (
           <Button key={category.dataTarget} onClick={() => setSelectedCategory(category.dataTarget)} className="mr-2 mb-2 font-bold py-2 px-4 rounded">
@@ -86,7 +86,7 @@ export default function VacanciesPage() {
           </Card>
         ))}
       </div>
-      {showDialog && (
+      {/* {showDialog && (
         <Dialog open={showDialog} onOpenChange={setShowDialog}>
           <DialogContent>
             <DialogHeader>
@@ -103,7 +103,7 @@ export default function VacanciesPage() {
             </DialogFooter>
           </DialogContent>
         </Dialog>
-      )}
+      )} */}
     </div>
   );
 }
